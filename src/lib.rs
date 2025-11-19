@@ -71,7 +71,10 @@ pub mod binary {
                 self.offset += length;
                 self.buffer[start_index..end_index].to_vec()
             } else {
-                panic!("The specified range is invalid.");
+                panic!(
+                    "The specified range is invalid. Offset: {}, Length: {}, Buffer size: {}, Trying to read until: {}",
+                    self.offset, length, self.buffer.len(), end_index
+                );
             }
         }
 
