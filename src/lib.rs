@@ -67,7 +67,7 @@ pub mod binary {
 
         /// Internal: Returns a slice without allocation (zero-copy)
         #[inline]
-        fn get(&mut self, length: usize) -> &'a [u8] {
+        pub fn get(&mut self, length: usize) -> &'a [u8] {
             let start = self.offset;
             let end = start + length;
 
