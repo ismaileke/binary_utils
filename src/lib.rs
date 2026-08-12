@@ -390,6 +390,16 @@ pub mod binary {
             self.buffer.reserve(additional);
         }
 
+        #[inline]
+        pub fn truncate(&mut self, len: usize) {
+            self.buffer.truncate(len);
+        }
+
+        #[inline]
+        pub fn resize(&mut self, len: usize, value: u8) {
+            self.buffer.resize(len, value);
+        }
+
         /// A `Reader` over what has been written so far.
         #[inline]
         pub fn reader(&self) -> Reader<'_> {
